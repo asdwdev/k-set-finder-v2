@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('longitude', 10, 7);
             $table->text('description')->nullable();
             $table->string('cover_image_url')->nullable();
-            $table->foreignId('created_by')->constrained('users')->nullOnDelete();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->boolean('is_verified')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

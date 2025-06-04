@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('episode_number')->nullable();
             $table->text('scene_description')->nullable();
             $table->string('screenshot_url')->nullable();
-            $table->foreignId('contributor_id')->constrained('users')->nullOnDelete();
+            $table->foreignId('contributor_id')->nullable()->constrained('users')->nullOnDelete();
             $table->time('timestamp')->nullable();
             $table->boolean('is_approved')->default(false);
             $table->timestamps();

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('poster_url')->nullable();
             $table->string('network')->nullable();
             $table->enum('status', ['ongoing', 'completed'])->default('completed');
-            $table->foreignId('created_by')->constrained('users')->nullOnDelete();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
     }
